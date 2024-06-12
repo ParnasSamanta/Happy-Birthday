@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+
+/* wish */
+#c{
+    position: absolute;
+	top: 100vh;
+	left: 0;
+}
+#Canvas{
+    position: absolute;
+	top: 100vh;
+	left: 0;
+}

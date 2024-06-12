@@ -1,0 +1,337 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.pages{
+    height: 100vh;
+    width: 100vw;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+#page0{
+    
+    scroll-snap-align: start;
+}
+#page1{
+    scroll-snap-align: start;
+}
+#page2{
+    scroll-snap-align: start;
+}
+#page3{
+    scroll-snap-align: start;
+}
+#page4{
+    scroll-snap-align: start;
+}
+#page5{
+    scroll-snap-align: start;
+}
+#page6{
+    scroll-snap-align: start;
+}
+#page7{
+    /* background-color: rgb(185, 39, 39); */
+    scroll-snap-align: start;
+}
+
+.frontContent {
+    display: flex;
+}
+
+/* background css */
+.mainContent {
+    /* background-color: #0c192c; */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.contentBack {
+    background-color: #0c192c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    z-index: -1;
+}
+.bubbles span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 
+    0 0 50px #4fc3dc, 
+    0 0 100px #4fc3dc;
+    animation: animate 20s linear infinite;
+    animation-duration: calc(200s / var(--i));
+}
+.bubbles span:nth-child(even) {
+    background-color: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 
+    0 0 50px #ff2d75, 
+    0 0 100px #ff2d75;
+}
+#frontContent {
+    /* position: relative; */
+    /* z-index: 1; */
+}
+@keyframes animate {
+    0% {
+        transform: translateY(200vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/* images-style */
+
+.images {
+    height: 75vh;
+    width: 32vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-top: 5%;
+    margin-left: 4%;
+    background-color: black;
+    z-index: 1;
+}
+
+.images::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 140%;
+    background-color: white;
+    box-shadow: 0 0 5px rgb(8, 8, 8);
+    animation: border_animate 4s linear infinite;
+}
+  
+#one_gin::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/one_gin.jpg);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+#two_shadow::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/two_shadow.jpg);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+#three_gojo::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/three_gojo.jpg);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+#four_ayanokoji::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/four_ayanokoji.jpg);
+    background-size: cover;
+    border-radius: 25px;
+}
+
+#five_vanitas::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background-image: url(images/five_vanitas.jpg);
+    background-size: cover;
+    border-radius: 25px;
+}
+  
+@keyframes border_animate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
+.vids {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+    height: 75vh;
+    width: 50vw;
+    right: -10%;
+    background-color: #3a3a3a;
+    border: 4px solid black;
+    border-radius: 25px;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0%;
+  bottom: 0%;
+}
+/* slider */
+
+.slider{
+    width: 32vw;
+    height: 75vh;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 2px 4px 8px 10px rgba(255, 68, 204, 0.4);
+    overflow: hidden;
+    z-index: 1;
+    top: 12%;
+    left: 5%;
+  }
+  .slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: 1s;
+  }
+
+  /* last slider */
+
+  .img-container {
+    position: relative; 
+    height: 70vh; /* responsive */
+    width: 32vw;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    /* margin-left: 1rem ; */
+    left: 15%;
+    margin-top: 5%;
+  }
+  .box {
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    position: absolute;
+    top: 50%;
+    transition: 800ms ease-in-out;
+  }
+  .box img {
+    width: 100%;
+    height: 100%;
+  }
+  .box:first-of-type {
+    z-index: 5;
+    opacity: 0;
+    left: 5%;
+    transform: translate(-50%, -50%) ;
+  }
+  .box:nth-of-type(2) {
+    opacity: 1;
+    left: 10%;
+    transform: translate(-50%, -50%) ;
+    z-index: 5;
+  }
+  .box:nth-of-type(3) {
+    left: 15%;
+    opacity: 0.75;
+    color: #eee;
+    z-index: 10;
+    transform: translate(-50%, -50%)  translateZ(-50px);
+  }
+  .box:nth-of-type(4) {
+    z-index: 5;
+    opacity: 0.5;
+    left:20%;
+    transform: translate(-50%, -50%)  translateZ(-100px);
+  }
+
+  /* flipcard */
+  .flipcard {
+    width: 45vw;
+    height: 70vh;
+    perspective: 800px;
+    position: relative;
+    left: 50%;
+    top: 10%;
+  }
+  
+  .flipcard:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+  
+  .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+  
+  .front,
+  .back {
+    color: whitesmoke;
+    font-size: 1.8rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    background-image: url(images/image.png);
+    background-size: cover;
+  }
+  
+  .back {
+    background-color: #2b3a4a;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  h3 {
+    margin: 3%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }

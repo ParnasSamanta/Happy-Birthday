@@ -1,0 +1,36 @@
+.countdown div {
+    opacity: 0;
+    animation: anime 1s ease-in-out 1;
+}
+.countdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #0d1229;
+    color: white;
+    font-size: 60px;
+    /* overflow: hidden; */
+}
+@keyframes anime {
+    0% {
+        opacity: 0.5;
+        filter: blur(10px);
+        transform: scale(4);
+    }
+    25%{
+        opacity: 0.65;
+    }
+    50%{
+        opacity: 0.75;
+        filter: blur(0px);
+    }
+    75%{
+        opacity: 0.85;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
